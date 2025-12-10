@@ -7,24 +7,28 @@ Career Copilot is a full-stack web application that leverages AWS services and a
 ## 🌟 Features
 
 ### 1. **Resume Builder**
+
 - Create professional, AI-enhanced resumes
 - Input personal information, work experience, skills, and achievements
 - Generate PDF resumes powered by AI
 - Download and manage your resume documents
 
 ### 2. **Interview Practice**
+
 - Generate company-specific interview questions
 - Get tailored questions for your target role
 - Practice with AI-generated questions and answers
 - Improve interview preparation
 
 ### 3. **Document Verification**
+
 - Upload and verify professional documents
 - Extract text and information from PDFs and images using AI OCR
 - Validate document authenticity
 - Secure document storage
 
 ### 4. **Secure Face Recognition Authentication**
+
 - Biometric login using Amazon Rekognition
 - Face-based user registration
 - Secure facial comparison for authentication
@@ -33,6 +37,7 @@ Career Copilot is a full-stack web application that leverages AWS services and a
 ## 🏗️ Architecture
 
 ### Frontend
+
 - **Framework:** React 19
 - **Routing:** React Router DOM
 - **Styling:** Tailwind CSS with custom gradients
@@ -40,6 +45,7 @@ Career Copilot is a full-stack web application that leverages AWS services and a
 - **UI Components:** Custom styled components with animations
 
 ### Backend
+
 - **Framework:** Flask with CORS support
 - **Authentication:** AWS Rekognition Face Recognition
 - **Database:** AWS DynamoDB
@@ -49,6 +55,7 @@ Career Copilot is a full-stack web application that leverages AWS services and a
 - **PDF Generation:** ReportLab
 
 ### AWS Services Integration
+
 - **Amazon Rekognition:** Face detection and comparison
 - **Amazon S3:** File storage and management
 - **Amazon DynamoDB:** User data persistence
@@ -59,15 +66,18 @@ Career Copilot is a full-stack web application that leverages AWS services and a
 ## 📋 Prerequisites
 
 ### Frontend Requirements
+
 - Node.js (v18 or higher)
 - npm or yarn
 
 ### Backend Requirements
+
 - Python 3.8+
 - AWS Account with appropriate permissions
 - AWS credentials configured locally
 
 ### Environment Variables (Backend)
+
 ```
 AWS_REGION=ap-south-1
 BUCKET_NAME=career.copilot.storage
@@ -79,16 +89,19 @@ DDB_TABLE=Users
 ### Frontend Setup
 
 1. Navigate to the frontend directory:
+
 ```bash
 cd frontend
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -96,6 +109,7 @@ npm run dev
 The frontend will be available at `http://localhost:5173` (or as specified by Vite)
 
 4. Build for production:
+
 ```bash
 npm run build
 ```
@@ -103,28 +117,33 @@ npm run build
 ### Backend Setup
 
 1. Navigate to the backend directory:
+
 ```bash
 cd backend
 ```
 
 2. Create a Python virtual environment:
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 3. Install Python dependencies:
+
 ```bash
 pip install flask flask-cors boto3 reportlab pillow
 ```
 
 4. Configure AWS credentials:
+
 ```bash
 aws configure
 # Enter your AWS Access Key ID, Secret Access Key, region, and output format
 ```
 
 5. Run the Flask backend server:
+
 ```bash
 python app.py
 ```
@@ -134,6 +153,7 @@ The backend will run on `http://localhost:5000`
 ## 🔐 Authentication Flow
 
 ### User Registration
+
 1. User provides a unique User ID
 2. Captures a face image
 3. Image is stored in S3
@@ -141,6 +161,7 @@ The backend will run on `http://localhost:5000`
 5. Registration complete
 
 ### User Login
+
 1. User enters User ID
 2. Captures a selfie
 3. Selfie is compared against registered face using Amazon Rekognition
@@ -177,17 +198,21 @@ career-copilot/
 ## 🔄 API Endpoints
 
 ### Authentication
+
 - `POST /register` - Register a new user with face image
 - `POST /login` - Authenticate user with face recognition
 
 ### Resume Management
+
 - `POST /resume` - Create/generate a resume
 - `POST /presign` - Get presigned URL for S3 download
 
 ### Interview Preparation
+
 - `POST /generate_interview` - Generate interview questions using AI
 
 ### Document Processing
+
 - `POST /verify` - Verify and extract text from documents
 
 ## 🎨 UI/UX Highlights
@@ -202,6 +227,7 @@ career-copilot/
 ## 🛠️ Technologies Used
 
 ### Frontend
+
 - React 19
 - React Router DOM 7
 - Tailwind CSS 4
@@ -209,6 +235,7 @@ career-copilot/
 - JavaScript (ES6+)
 
 ### Backend
+
 - Flask
 - Python 3
 - Boto3 (AWS SDK)
@@ -216,6 +243,7 @@ career-copilot/
 - Pillow
 
 ### AWS Services
+
 - Amazon Rekognition
 - Amazon S3
 - Amazon DynamoDB
@@ -225,6 +253,7 @@ career-copilot/
 ## 📝 Usage Guide
 
 ### Creating a Resume
+
 1. Log in to the dashboard
 2. Click on "Resume Builder" tab
 3. Fill in your personal information
@@ -233,6 +262,7 @@ career-copilot/
 6. Download the PDF from the presigned S3 link
 
 ### Practicing Interviews
+
 1. Navigate to "Interview Practice" tab
 2. Enter target company and role
 3. Generate interview questions
@@ -240,6 +270,7 @@ career-copilot/
 5. Practice with the questions
 
 ### Verifying Documents
+
 1. Go to "Document Verification" tab
 2. Upload document (PDF or image)
 3. System extracts and verifies information
@@ -257,6 +288,7 @@ career-copilot/
 ## 🚨 Error Handling
 
 The application includes comprehensive error handling:
+
 - User not found errors
 - Invalid face detection
 - AWS service failures
@@ -275,4 +307,3 @@ Error messages are displayed to users in a user-friendly format.
 - [ ] Mobile app (React Native)
 - [ ] Email notifications
 - [ ] Social sharing features
-
