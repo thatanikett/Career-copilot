@@ -116,23 +116,22 @@ npm run build
 
 ### Backend Setup
 
-1. Navigate to the backend directory:
+1. From the project root directory, create a Python virtual environment:
 
 ```bash
-cd backend
+python3 -m venv venv
 ```
 
-2. Create a Python virtual environment:
+2. Activate the virtual environment:
 
 ```bash
-python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. Install Python dependencies:
+3. Install Python dependencies from requirements.txt:
 
 ```bash
-pip install flask flask-cors boto3 reportlab pillow
+pip install -r requirements.txt
 ```
 
 4. Configure AWS credentials:
@@ -145,8 +144,11 @@ aws configure
 5. Run the Flask backend server:
 
 ```bash
+cd backend
 python app.py
 ```
+
+**Note:** Make sure the virtual environment is activated before running the backend server. You should see `(venv)` in your terminal prompt when it's active.
 
 The backend will run on `http://localhost:5000`
 
