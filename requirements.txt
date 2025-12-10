@@ -1,0 +1,13 @@
+# Requirements for Career-copilot backend
+# Recommended Python version: 3.10+
+
+Flask>=2.2,<3.0
+Flask-Cors>=3.0.10
+boto3>=1.26.0
+botocore>=1.29.0
+reportlab>=3.6.13
+Pillow>=9.5.0
+gunicorn>=20.1.0
+
+# Optional (only if you want to manage env vars via .env)
+# python-dotenv>=1.0.0
